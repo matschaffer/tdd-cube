@@ -1,0 +1,2 @@
+cookbook 'minitest-handler', :locked_version => '0.1.0'
+cookbook 'chef_handler', :locked_version => '1.0.6'
