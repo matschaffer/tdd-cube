@@ -1,5 +1,7 @@
+interactor :off
+
 guard 'shell' do
-  watch %r|^cookbooks-sources/cube| do |m|
-    system 'berks install --shims && vagrant provision'
+  watch %r|^cookbooks-sources/cube| do
+    system "berks install --shims && strain cube"
   end
 end
