@@ -1,0 +1,12 @@
+description "Cube <%= @component %>"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+
+env PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+chdir <%= node['cube']['root'] %>
+
+exec sudo -u node node bin/<%= @component %>.js

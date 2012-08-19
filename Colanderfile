@@ -1,4 +1,3 @@
 knife test: knife cookbook test $COOKBOOK
 foodcritic: foodcritic -f any $COOKBOOK
-chefspec: rspec $COOKBOOK
 converge: vagrant provision

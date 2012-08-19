@@ -2,16 +2,21 @@ package 'nodejs'
 package 'git'
 package 'mongodb'
 
-git "/opt/cube" do
+git node['cube']['root'] do
   repository "https://github.com/square/cube.git"
   reference "master"
   action :sync
 end
 
-service 'cube-collector' do
-  action [ :enable, :start ]
-end
+%w( collector evaluator ).each do |component|
+  template "/etc/init/cube-#{component}.conf" do
+    source "upstart.conf.erb"
+    variables :component => component
+  end
 
-service 'cube-evaluator' do
-  action [ :enable, :start ]
+  service "cube-#{component}" do
+    provider Chef::Provider::Service::Upstart
+    supports :status => true, :restart => true
+    action [ :enable, :start ]
+  end
 end

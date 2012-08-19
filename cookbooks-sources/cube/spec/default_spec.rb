@@ -15,11 +15,13 @@ describe 'cube::default' do
     chef_run.should install_package 'mongodb'
   end
 
-  it 'should start the cube-collector service' do
-    chef_run.should start_service 'cube-collector'
+  it 'should generate the cube service templates' do
+    chef_run.should create_file_with_content '/etc/init/cube-collector.conf', 'collector.js'
+    chef_run.should create_file_with_content '/etc/init/cube-evaluator.conf', 'evaluator.js'
   end
 
-  it 'should start the cube-evaluator service' do
+  it 'should start cube services' do
+    chef_run.should start_service 'cube-collector'
     chef_run.should start_service 'cube-evaluator'
   end
 end
