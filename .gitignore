@@ -1,4 +1,4 @@
-/cookbooks
 /.vagrant
-/colander
+/.colander
+/cookbooks
 /test/kitchen/.kitchen

@@ -134,7 +134,7 @@ GEM
       sexp_processor (~> 3.0)
     sexp_processor (3.2.0)
     slop (2.1.0)
-    strainer (0.1.0)
+    strainer (0.1.1)
       chef (~> 10.12.0)
       term-ansicolor (~> 1.0.7)
     systemu (2.5.2)
