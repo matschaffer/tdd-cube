@@ -38,7 +38,7 @@ GEM
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
       debugger-ruby_core_source (~> 1.1.3)
-    debugger-linecache (1.1.1)
+    debugger-linecache (1.1.2)
       debugger-ruby_core_source (>= 1.1.1)
     debugger-ruby_core_source (1.1.3)
     dep_selector (0.0.8)
